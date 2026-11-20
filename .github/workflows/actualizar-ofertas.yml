@@ -111,7 +111,14 @@ jobs:
               if not api_key:
                   return []
               resultados = []
-              for q in ["delineante Bizkaia", "proyectista mecanico Bizkaia"]:
+              for q in [
+    "delineante Bizkaia",
+    "proyectista mecanico Bizkaia",
+    "delineante Bizkaia InfoJobs",
+    "delineante Bizkaia Infoempleo",
+    "delineante Bizkaia Lanbide"
+]:
+
                   try:
                       r = requests.get(
                           "https://serpapi.com/search.json",
