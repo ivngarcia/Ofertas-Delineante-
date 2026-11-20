@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Delineante Bizkaia · Buscador de Ofertas</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --surface: #1e293b;
+      --border: #334155;
+      --text: #f1f5f9;
+      --muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-dark: #0284c7;
+      --green: #22c55e;
+      --amber: #f59e0b;
+      --red: #ef4444;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding-bottom: 3rem;
+    }
+
+    .container { max-width: 1120px; margin: 0 auto; padding: 0 1rem; }
+
+    .topbar {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      padding: 1.25rem 0;
+      margin-bottom: 1.25rem;
+    }
+
+    .topbar-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .topbar h1 { font-size: 1.45rem; color: var(--accent); }
+    .subtitle { font-size: 0.9rem; color: var(--muted); }
+    .meta-info { font-size: 0.85rem; color: var(--muted); }
+
+    .quick-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .quick-label { font-size: 0.85rem; color: var(--muted); margin-right: 0.25rem; }
+
+    .quick-links a {
+      text-decoration: none;
+      color: var(--text);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 0.35rem 0.7rem;
+      border-radius: 6px;
+      font-size: 0.82rem;
+      transition: border-color 0.15s;
+    }
+
+    .quick-links a:hover { border-color: var(--accent); color: var(--accent); }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 0.75rem;
+      margin-bottom: 1rem;
+    }
+
+    .controls input,
+    .controls select {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 0.65rem 0.85rem;
+      border-radius: 8px;
+      font-size: 0.92rem;
+    }
+
+    .controls input:focus,
+    .controls select:focus { outline: none; border-color: var(--accent); }
+
+    .tabs { display: flex; gap: 0.5rem; margin-bottom: 1.25rem; flex-wrap: wrap; }
+
+    .tab {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.5rem 0.9rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 0.88rem;
+    }
+
+    .tab.active {
+      background: var(--accent-dark);
+      border-color: var(--accent);
+      color: #fff;
+      font-weight: 600;
+    }
+
+    .jobs-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.65rem;
+    }
+
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+
+    .source-badge {
+      font-size: 0.72rem;
+      background: #0f172a;
+      color: var(--accent);
+      border: 1px solid var(--border);
+      padding: 0.2rem 0.5rem;
+      border-radius: 999px;
+      white-space: nowrap;
+    }
+
+    .card h2 { font-size: 1.05rem; line-height: 1.3; }
+    .company { font-size: 0.9rem; color: var(--muted); font-weight: 500; }
+
+    .details {
+      font-size: 0.84rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+
+    .tag {
+      font-size: 0.74rem;
+      background: rgba(56, 189, 248, 0.12);
+      color: var(--accent);
+      padding: 0.18rem 0.5rem;
+      border-radius: 4px;
+    }
+
+    .actions {
+      margin-top: auto;
+      padding-top: 0.75rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .btn-open {
+      text-decoration: none;
+      background: var(--accent-dark);
+      color: #fff;
+      padding: 0.45rem 0.85rem;
+      border-radius: 6px;
+      font-size: 0.84rem;
+      font-weight: 600;
+    }
+
+    .btn-open:hover { background: var(--accent); color: #0f172a; }
+
+    .status-btns { display: flex; gap: 0.35rem; }
+
+    .btn-icon {
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      padding: 0.35rem 0.55rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 0.8rem;
+    }
+
+    .btn-icon.active-fav { border-color: var(--amber); color: var(--amber); }
+    .btn-icon.active-ins { border-color: var(--green); color: var(--green); }
+    .btn-icon.active-des { border-color: var(--red); color: var(--red); }
+
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 3rem 1rem;
+      color: var(--muted);
+      background: var(--surface);
+      border-radius: 10px;
+      border: 1px dashed var(--border);
+    }
+
+    @media (max-width: 720px) {
+      .controls { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <div>
+        <h1>Delineante Bizkaia</h1>
+        <p class="subtitle">Agregador automático de ofertas CAD, proyectista y delineación</p>
+      </div>
+      <div class="meta-info">
+        <span id="last-update">Cargando...</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="quick-links">
+      <span class="quick-label">Barrido rápido manual:</span>
+      <a href="https://www.infojobs.net/ofertas-trabajo/vizcaya-bizkaia?keyword=delineante" target="_blank" rel="noopener">InfoJobs</a>
+      <a href="https://www.infoempleo.com/trabajo/en_vizcaya/delineante/" target="_blank" rel="noopener">Infoempleo</a>
+      <a href="https://www.lanbide.euskadi.eus/empleo-ofertas/" target="_blank" rel="noopener">Lanbide</a>
+      <a href="https://www.linkedin.com/jobs/search/?keywords=delineante&location=Bizkaia" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://www.randstad.es/candidatos/ofertas-empleo/?keyword=delineante&location=Vizcaya" target="_blank" rel="noopener">Randstad</a>
+      <a href="https://www.adecco.es/ofertas-trabajo?k=delineante&l=Vizcaya" target="_blank" rel="noopener">Adecco</a>
+      <a href="https://empleabilidad.imancorp.es/" target="_blank" rel="noopener">Iman ETT</a>
+      <a href="https://empleo.synergie.es/" target="_blank" rel="noopener">Synergie</a>
+    </section>
+
+    <section class="controls">
+      <input type="search" id="search-input" placeholder="Buscar por puesto, empresa, municipio o software..." />
+      <select id="source-filter"><option value="">Todas las fuentes</option></select>
+      <select id="tag-filter"><option value="">Todo el software / especialidad</option></select>
+    </section>
+
+    <section class="tabs" id="status-tabs">
+      <button class="tab active" data-status="activas">Activas (<span id="count-activas">0</span>)</button>
+      <button class="tab" data-status="favorita">Favoritas (<span id="count-favorita">0</span>)</button>
+      <button class="tab" data-status="inscrito">Inscrito (<span id="count-inscrito">0</span>)</button>
+      <button class="tab" data-status="descartada">Descartadas (<span id="count-descartada">0</span>)</button>
+    </section>
+
+    <section id="jobs-grid" class="jobs-grid"></section>
+  </main>
+
+  <script>
+    const STORAGE_KEY = "delineante_bizkaia_estados_v1";
+    const DEMO_DATA = {
+      ultima_actualizacion: "Modo demo (ejecuta la GitHub Action para cargar ofertas reales)",
+      ofertas: [
+        {
+          id: "demo001",
+          titulo: "Delineante Proyectista Mecánico (AutoCAD / Inventor)",
+          empresa: "Ejemplo Ingeniería Bizkaia",
+          ubicacion: "Zamudio, Bizkaia",
+          salario: "30.000€ - 36.000€ Bruto/año",
+          fuente: "InfoJobs",
+          fecha: new Date().toISOString().slice(0, 10),
+          url: "https://www.infojobs.net/",
+          etiquetas: ["AutoCAD", "Inventor", "Calderería"]
+        }
+      ]
+    };
+
+    let todasLasOfertas = [];
+    let estadoActualTab = "activas";
+    let estadosGuardados = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}");
+
+    const grid = document.getElementById("jobs-grid");
+    const searchInput = document.getElementById("search-input");
+    const sourceFilter = document.getElementById("source-filter");
+    const tagFilter = document.getElementById("tag-filter");
+    const lastUpdateEl = document.getElementById("last-update");
+
+    async function cargarOfertas() {
+      try {
+        const resp = await fetch("./data/ofertas.json?v=" + Date.now());
+        if (!resp.ok) throw new Error("Aún no generado");
+        const data = await resp.json();
+        todasLasOfertas = data.ofertas || [];
+        lastUpdateEl.textContent = `Actualizado: ${data.ultima_actualizacion}`;
+      } catch {
+        todasLasOfertas = DEMO_DATA.ofertas;
+        lastUpdateEl.textContent = DEMO_DATA.ultima_actualizacion;
+      }
+      poblarFiltros();
+      renderizar();
+    }
+
+    function poblarFiltros() {
+      const fuentes = [...new Set(todasLasOfertas.map((o) => o.fuente))].sort();
+      const etiquetas = [...new Set(todasLasOfertas.flatMap((o) => o.etiquetas || []))].sort();
+
+      fuentes.forEach((f) => {
+        const opt = document.createElement("option");
+        opt.value = f;
+        opt.textContent = f;
+        sourceFilter.appendChild(opt);
+      });
+
+      etiquetas.forEach((t) => {
+        const opt = document.createElement("option");
+        opt.value = t;
+        opt.textContent = t;
+        tagFilter.appendChild(opt);
+      });
+    }
+
+    function cambiarEstado(id, nuevoEstado) {
+      if (estadosGuardados[id] === nuevoEstado) delete estadosGuardados[id];
+      else estadosGuardados[id] = nuevoEstado;
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(estadosGuardados));
+      renderizar();
+    }
+
+    function actualizarContadores() {
+      let activas = 0, favorita = 0, inscrito = 0, descartada = 0;
+      todasLasOfertas.forEach((o) => {
+        const est = estadosGuardados[o.id];
+        if (est === "descartada") descartada++;
+        else {
+          activas++;
+          if (est === "favorita") favorita++;
+          if (est === "inscrito") inscrito++;
+        }
+      });
+      document.getElementById("count-activas").textContent = activas;
+      document.getElementById("count-favorita").textContent = favorita;
+      document.getElementById("count-inscrito").textContent = inscrito;
+      document.getElementById("count-descartada").textContent = descartada;
+    }
+
+    function renderizar() {
+      actualizarContadores();
+      const texto = searchInput.value.toLowerCase().trim();
+      const fuente = sourceFilter.value;
+      const tag = tagFilter.value;
+
+      const filtradas = todasLasOfertas.filter((o) => {
+        const est = estadosGuardados[o.id];
+        if (estadoActualTab === "activas" && est === "descartada") return false;
+        if (estadoActualTab !== "activas" && est !== estadoActualTab) return false;
+        if (fuente && o.fuente !== fuente) return false;
+        if (tag && !(o.etiquetas || []).includes(tag)) return false;
+        if (texto) {
+          const bloque = `${o.titulo} ${o.empresa} ${o.ubicacion} ${(o.etiquetas || []).join(" ")}`.toLowerCase();
+          if (!bloque.includes(texto)) return false;
+        }
+        return true;
+      });
+
+      if (!filtradas.length) {
+        grid.innerHTML = `<div class="empty">No hay ofertas que coincidan con estos filtros.</div>`;
+        return;
+      }
+
+      grid.innerHTML = filtradas.map((o) => {
+        const est = estadosGuardados[o.id];
+        const tagsHtml = (o.etiquetas || []).map((t) => `<span class="tag">${t}</span>`).join("");
+        return `
+          <article class="card">
+            <div class="card-header">
+              <h2>${o.titulo}</h2>
+              <span class="source-badge">${o.fuente}</span>
+            </div>
+            <div class="company">${o.empresa}</div>
+            <div class="details">
+              <span>📍 ${o.ubicacion}</span>
+              <span>💶 ${o.salario}</span>
+              <span>📅 ${o.fecha}</span>
+            </div>
+            <div class="tags">${tagsHtml}</div>
+            <div class="actions">
+              <a class="btn-open" href="${o.url}" target="_blank" rel="noopener">Ver oferta</a>
+              <div class="status-btns">
+                <button class="btn-icon ${est === "favorita" ? "active-fav" : ""}" onclick="cambiarEstado('${o.id}', 'favorita')" title="Favorita">★</button>
+                <button class="btn-icon ${est === "inscrito" ? "active-ins" : ""}" onclick="cambiarEstado('${o.id}', 'inscrito')" title="Ya inscrito">✓</button>
+                <button class="btn-icon ${est === "descartada" ? "active-des" : ""}" onclick="cambiarEstado('${o.id}', 'descartada')" title="Descartar">✕</button>
+              </div>
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    searchInput.addEventListener("input", renderizar);
+    sourceFilter.addEventListener("change", renderizar);
+    tagFilter.addEventListener("change", renderizar);
+    document.getElementById("status-tabs").addEventListener("click", (e) => {
+      const btn = e.target.closest(".tab");
+      if (!btn) return;
+      document.querySelectorAll(".tab").forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      estadoActualTab = btn.dataset.status;
+      renderizar();
+    });
+
+    cargarOfertas();
+  </script>
+</body>
+</html>
