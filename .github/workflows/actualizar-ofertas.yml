@@ -1,0 +1,213 @@
+name: Actualizar ofertas de delineante en Bizkaia
+
+on:
+  schedule:
+    - cron: '0 7 * * *' # Todos los días a las 07:00 UTC
+  workflow_dispatch:     # Permite ejecutarlo manualmente
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Descargar repositorio
+        uses: actions/checkout@v4
+
+      - name: Configurar Python e instalar librerías
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Instalar dependencias
+        run: pip install requests beautifulsoup4
+
+      - name: Ejecutar buscador de ofertas
+        env:
+          INFOJOBS_CLIENT_ID: ${{ secrets.INFOJOBS_CLIENT_ID }}
+          INFOJOBS_CLIENT_SECRET: ${{ secrets.INFOJOBS_CLIENT_SECRET }}
+          SERPAPI_KEY: ${{ secrets.SERPAPI_KEY }}
+        run: |
+          python3 - << 'EOF'
+          import base64
+          import hashlib
+          import json
+          import os
+          import re
+          from datetime import datetime, timedelta, timezone
+          from pathlib import Path
+
+          import requests
+          from bs4 import BeautifulSoup
+
+          DATA_FILE = Path("data/ofertas.json")
+          KEYWORDS = ["delineante", "proyectista mecanico", "tecnico cad"]
+
+          ETIQUETAS_MAP = {
+              "AutoCAD": [r"autocad", r"\bcad\b"],
+              "Inventor": [r"inventor"],
+              "SolidWorks": [r"solidworks", r"solid works"],
+              "Solid Edge": [r"solid\s?edge"],
+              "Siemens NX": [r"siemens\s?nx", r"\bnx\b"],
+              "Revit / BIM": [r"revit", r"\bbim\b"],
+              "Tekla": [r"tekla"],
+              "EPLAN": [r"eplan"],
+              "Calderería": [r"calderer"],
+              "Estructuras": [r"estructura"],
+              "Tubería": [r"tuber[ií]a", r"piping"],
+              "Chapa / Mecánica": [r"chapa", r"mec[aá]nic", r"mecanizad"],
+          }
+
+          def generar_id(titulo, empresa):
+              base = re.sub(r"\W+", "", f"{titulo.lower()}{empresa.lower()}")
+              return hashlib.md5(base.encode("utf-8")).hexdigest()[:12]
+
+          def detectar_etiquetas(texto):
+              texto_lower = texto.lower()
+              return [
+                  etiqueta for etiqueta, patrones in ETIQUETAS_MAP.items()
+                  if any(re.search(p, texto_lower) for p in patrones)
+              ]
+
+          def buscar_infojobs():
+              cid = os.getenv("INFOJOBS_CLIENT_ID")
+              csec = os.getenv("INFOJOBS_CLIENT_SECRET")
+              if not cid or not csec:
+                  return []
+              token = base64.b64encode(f"{cid}:{csec}".encode()).decode()
+              headers = {"Authorization": f"Basic {token}"}
+              resultados = []
+              for kw in KEYWORDS:
+                  try:
+                      r = requests.get(
+                          "https://api.infojobs.net/api/9/offer",
+                          headers=headers,
+                          params={"q": kw, "province": "vizcaya-bizkaia", "maxResults": 30, "order": "updated-desc"},
+                          timeout=20,
+                      )
+                      r.raise_for_status()
+                      for item in r.json().get("items", []):
+                          titulo = item.get("title", "Sin título")
+                          empresa = item.get("author", {}).get("name", "Empresa confidencial")
+                          resultados.append({
+                              "id": generar_id(titulo, empresa),
+                              "titulo": titulo,
+                              "empresa": empresa,
+                              "ubicacion": item.get("city", "Bizkaia"),
+                              "salario": item.get("salaryDescription", "No especificado"),
+                              "fuente": "InfoJobs",
+                              "fecha": (item.get("updated") or item.get("published") or "")[:10] or datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+                              "url": item.get("link", ""),
+                              "etiquetas": detectar_etiquetas(f"{titulo} {item.get('requirementMin', '')}"),
+                          })
+                  except Exception as e:
+                      print(f"[InfoJobs] Error '{kw}': {e}")
+              return resultados
+
+          def buscar_google_jobs():
+              api_key = os.getenv("SERPAPI_KEY")
+              if not api_key:
+                  return []
+              resultados = []
+              for q in ["delineante Bizkaia", "proyectista mecanico Bizkaia"]:
+                  try:
+                      r = requests.get(
+                          "https://serpapi.com/search.json",
+                          params={"engine": "google_jobs", "q": q, "hl": "es", "gl": "es", "api_key": api_key},
+                          timeout=25,
+                      )
+                      r.raise_for_status()
+                      for job in r.json().get("jobs_results", []):
+                          titulo = job.get("title", "Sin título")
+                          empresa = job.get("company_name", "Empresa no indicada")
+                          via = job.get("via", "Google Jobs").replace("a través de ", "").strip()
+                          apply_opts = job.get("apply_options") or []
+                          enlace = apply_opts[0].get("link") if apply_opts else job.get("share_link", "")
+                          resultados.append({
+                              "id": generar_id(titulo, empresa),
+                              "titulo": titulo,
+                              "empresa": empresa,
+                              "ubicacion": job.get("location", "Bizkaia"),
+                              "salario": job.get("detected_extensions", {}).get("salary", "No especificado"),
+                              "fuente": via,
+                              "fecha": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+                              "url": enlace,
+                              "etiquetas": detectar_etiquetas(f"{titulo} {job.get('description', '')}"),
+                          })
+                  except Exception as e:
+                      print(f"[SerpApi] Error '{q}': {e}")
+              return resultados
+
+          def buscar_lanbide():
+              resultados = []
+              try:
+                  r = requests.get(
+                      "https://www.lanbide.euskadi.eus/empleo-ofertas/",
+                      params={"texto": "delineante", "provincia": "48"},
+                      headers={"User-Agent": "Mozilla/5.0"},
+                      timeout=20,
+                  )
+                  if r.status_code != 200:
+                      return []
+                  soup = BeautifulSoup(r.text, "html.parser")
+                  for a in soup.select("a[href*='detalle-oferta'], a[href*='oferta']"):
+                      titulo = a.get_text(strip=True)
+                      if "delineante" not in titulo.lower() and "proyectista" not in titulo.lower():
+                          continue
+                      href = a.get("href", "")
+                      if href.startswith("/"):
+                          href = f"https://www.lanbide.euskadi.eus{href}"
+                      resultados.append({
+                          "id": generar_id(titulo, "Lanbide"),
+                          "titulo": titulo,
+                          "empresa": "Oferta Lanbide",
+                          "ubicacion": "Bizkaia",
+                          "salario": "Consultar en Lanbide",
+                          "fuente": "Lanbide",
+                          "fecha": datetime.now(timezone.utc).strftime("%Y-%m-%d"),
+                          "url": href,
+                          "etiquetas": detectar_etiquetas(titulo),
+                      })
+              except Exception as e:
+                  print(f"[Lanbide] Error: {e}")
+              return resultados
+
+          def cargar_existentes():
+              if not DATA_FILE.exists():
+                  return {}
+              try:
+                  contenido = json.loads(DATA_FILE.read_text(encoding="utf-8"))
+                  limite = (datetime.now(timezone.utc) - timedelta(days=30)).strftime("%Y-%m-%d")
+                  return {o["id"]: o for o in contenido.get("ofertas", []) if o.get("fecha", "9999-99-99") >= limite}
+              except Exception:
+                  return {}
+
+          ofertas_map = cargar_existentes()
+          for oferta in buscar_infojobs() + buscar_google_jobs() + buscar_lanbide():
+              if oferta["url"]:
+                  ofertas_map[oferta["id"]] = oferta
+
+          lista_final = sorted(ofertas_map.values(), key=lambda x: x.get("fecha", ""), reverse=True)
+          salida = {
+              "ultima_actualizacion": datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC"),
+              "total": len(lista_final),
+              "ofertas": lista_final,
+          }
+          DATA_FILE.parent.mkdir(parents=True, exist_ok=True)
+          DATA_FILE.write_text(json.dumps(salida, ensure_ascii=False, indent=2), encoding="utf-8")
+          print(f"Guardadas {len(lista_final)} ofertas.")
+          EOF
+
+      - name: Guardar cambios en data/ofertas.json
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "github-actions[bot]"
+          git add data/ofertas.json
+          if git diff --staged --quiet; then
+            echo "Sin cambios."
+          else
+            git commit -m "Actualización automática de ofertas ($(date +'%Y-%m-%d'))"
+            git push
+          fi
