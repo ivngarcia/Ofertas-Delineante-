@@ -2,8 +2,8 @@ name: Actualizar ofertas de delineante en Bizkaia
 
 on:
   schedule:
-    - cron: '0 7 * * *' # Todos los días a las 07:00 UTC
-  workflow_dispatch:     # Permite ejecutarlo manualmente
+    - cron: '0 7 */2 * *' # Cada 2 días a las 07:00 UTC (cuida el límite gratis de SerpApi)
+  workflow_dispatch:       # Permite ejecutarlo manualmente cuando quieras
 
 permissions:
   contents: write
@@ -111,14 +111,14 @@ jobs:
               if not api_key:
                   return []
               resultados = []
-              for q in [
-    "delineante Bizkaia",
-    "proyectista mecanico Bizkaia",
-    "delineante Bizkaia InfoJobs",
-    "delineante Bizkaia Infoempleo",
-    "delineante Bizkaia Lanbide"
-]:
-
+              consultas = [
+                  "delineante Bizkaia",
+                  "proyectista mecanico Bizkaia",
+                  "delineante Bizkaia InfoJobs",
+                  "delineante Bizkaia Infoempleo",
+                  "delineante Bizkaia Lanbide",
+              ]
+              for q in consultas:
                   try:
                       r = requests.get(
                           "https://serpapi.com/search.json",
