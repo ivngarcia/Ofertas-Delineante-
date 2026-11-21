@@ -1,6 +1,6 @@
 {
-  "ultima_actualizacion": "2026-11-20 09:35 UTC",
-  "total": 15,
+  "ultima_actualizacion": "2026-11-21 15:12 UTC",
+  "total": 19,
   "ofertas": [
     {
       "id": "5e209c554b8e",
@@ -9,7 +9,7 @@
       "ubicacion": "San Vicente de Barakaldo",
       "salario": "De 24 mil € a 26 mil € al año",
       "fuente": "Randstad",
-      "fecha": "2026-11-20",
+      "fecha": "2026-11-21",
       "url": "https://www.randstad.es/candidatos/ofertas-empleo/oferta/tecnico-a-produccion-y-delineante-cad-3019963/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "etiquetas": [
         "AutoCAD",
@@ -24,8 +24,135 @@
       "ubicacion": "Ortuella",
       "salario": "No especificado",
       "fuente": "Jooble",
-      "fecha": "2026-11-20",
+      "fecha": "2026-11-21",
       "url": "https://es.jooble.org/jdp/8122571312506839286?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD"
+      ]
+    },
+    {
+      "id": "093dd10a9b7e",
+      "titulo": "Delineante AutoCAD/Obra civil",
+      "empresa": "Cad & Bim Services",
+      "ubicacion": "País Vasco",
+      "salario": "No especificado",
+      "fuente": "Trabajo.org",
+      "fecha": "2026-11-21",
+      "url": "https://es.trabajo.org/oferta-2635-51636fd780b86128b5dc9ce172ddcfd4?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Revit / BIM",
+        "Estructuras"
+      ]
+    },
+    {
+      "id": "9f4e24b3aed9",
+      "titulo": "Delineante AutoCAD en Ingeniería Civil",
+      "empresa": "RDT",
+      "ubicacion": "País Vasco",
+      "salario": "No especificado",
+      "fuente": "SpainJobs.io",
+      "fecha": "2026-11-21",
+      "url": "https://www.spainjobs.io/es/empresas/rdt/delineante-autocad-en-ingenieria-civil-bizkaia--e81db07391?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Estructuras"
+      ]
+    },
+    {
+      "id": "69fdca56f2f6",
+      "titulo": "Delineante (TEMPORAL)",
+      "empresa": "FVEM - Federación Vizcaína de Empresas del Metal",
+      "ubicacion": "Ortuella",
+      "salario": "No especificado",
+      "fuente": "Trabajo.org",
+      "fecha": "2026-11-21",
+      "url": "https://es.trabajo.org/oferta-2635-e9b5d87484132a177144189f00144bce?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD"
+      ]
+    },
+    {
+      "id": "a17f649929f8",
+      "titulo": "Delineante Civil 3D",
+      "empresa": "Iddtek",
+      "ubicacion": "Zamudio",
+      "salario": "No especificado",
+      "fuente": "Indeed",
+      "fecha": "2026-11-21",
+      "url": "https://es.indeed.com/viewjob?jk=5a67fdf5e7baeeac&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Revit / BIM",
+        "Estructuras"
+      ]
+    },
+    {
+      "id": "2d87a1957cf9",
+      "titulo": "Delineante Mecánico/a con Autocad",
+      "empresa": "Claire Joster",
+      "ubicacion": "Bilbao",
+      "salario": "No especificado",
+      "fuente": "Trabajo.org",
+      "fecha": "2026-11-21",
+      "url": "https://es.trabajo.org/oferta-2635-ce407cde76fd62c4195778908beb18b9?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "SolidWorks",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "064f0425e6f6",
+      "titulo": "Delineante BIM 3D: AutoCAD Plant 3D y Revit",
+      "empresa": "Jobleads",
+      "ubicacion": "Bilbao",
+      "salario": "No especificado",
+      "fuente": "Jooble",
+      "fecha": "2026-11-21",
+      "url": "https://es.jooble.org/jdp/318366538174744623?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Revit / BIM",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "e5d8325b195b",
+      "titulo": "DELINEANTE/A INDUSTRIAL MUNGIA",
+      "empresa": "adecco",
+      "ubicacion": "Mungia",
+      "salario": "No especificado",
+      "fuente": "Adecco",
+      "fecha": "2026-11-21",
+      "url": "https://www.adecco.com/es-es/ofertas-trabajo/delineante-a-industrial-mungia-mungia-vizcaya/900c88811387d9de8ee6111d67d31e1f?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Inventor",
+        "Calderería",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "12ad438105cc",
+      "titulo": "Delineante Proyectista Obra Civil (Puentes y Viaductos_Bentley en Software Openbridge/Openroads y Microstation)",
+      "empresa": "SENER",
+      "ubicacion": "País Vasco",
+      "salario": "No especificado",
+      "fuente": "Jooble",
+      "fecha": "2026-11-21",
+      "url": "https://es.jooble.org/jdp/-5299087253700150287?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": []
+    },
+    {
+      "id": "aaede176658a",
+      "titulo": "Delineante Of 2ª  (H/M)",
+      "empresa": "ANANDA GESTION ETT",
+      "ubicacion": "Vizcaya",
+      "salario": "No especificado",
+      "fuente": "Infoempleo",
+      "fecha": "2026-11-21",
+      "url": "https://www.infoempleo.com/ofertasdetrabajo/delineante-of-2-hm/galdakaogaldacano/3086895/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
       "etiquetas": [
         "AutoCAD"
       ]
@@ -45,35 +172,6 @@
       ]
     },
     {
-      "id": "093dd10a9b7e",
-      "titulo": "Delineante AutoCAD/Obra civil",
-      "empresa": "Cad & Bim Services",
-      "ubicacion": "País Vasco",
-      "salario": "No especificado",
-      "fuente": "Trabajo.org",
-      "fecha": "2026-11-20",
-      "url": "https://es.trabajo.org/oferta-2635-51636fd780b86128b5dc9ce172ddcfd4?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Revit / BIM",
-        "Estructuras"
-      ]
-    },
-    {
-      "id": "9f4e24b3aed9",
-      "titulo": "Delineante AutoCAD en Ingeniería Civil",
-      "empresa": "RDT",
-      "ubicacion": "País Vasco",
-      "salario": "No especificado",
-      "fuente": "SpainJobs.io",
-      "fecha": "2026-11-20",
-      "url": "https://www.spainjobs.io/es/empresas/rdt/delineante-autocad-en-ingenieria-civil-bizkaia--e81db07391?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Estructuras"
-      ]
-    },
-    {
       "id": "7ab62785f112",
       "titulo": "Delineante/a Revit y Autocad 3D",
       "empresa": "Iddtek",
@@ -86,49 +184,6 @@
         "AutoCAD",
         "Revit / BIM",
         "Estructuras"
-      ]
-    },
-    {
-      "id": "69fdca56f2f6",
-      "titulo": "Delineante (TEMPORAL)",
-      "empresa": "FVEM - Federación Vizcaína de Empresas del Metal",
-      "ubicacion": "Ortuella",
-      "salario": "No especificado",
-      "fuente": "Trabajo.org",
-      "fecha": "2026-11-20",
-      "url": "https://es.trabajo.org/oferta-2635-e9b5d87484132a177144189f00144bce?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD"
-      ]
-    },
-    {
-      "id": "a17f649929f8",
-      "titulo": "Delineante Civil 3D",
-      "empresa": "Iddtek",
-      "ubicacion": "Zamudio",
-      "salario": "No especificado",
-      "fuente": "Indeed",
-      "fecha": "2026-11-20",
-      "url": "https://es.indeed.com/viewjob?jk=5a67fdf5e7baeeac&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Revit / BIM",
-        "Estructuras"
-      ]
-    },
-    {
-      "id": "2d87a1957cf9",
-      "titulo": "Delineante Mecánico/a con Autocad",
-      "empresa": "Claire Joster",
-      "ubicacion": "Bilbao",
-      "salario": "No especificado",
-      "fuente": "Trabajo.org",
-      "fecha": "2026-11-20",
-      "url": "https://es.trabajo.org/oferta-2635-ce407cde76fd62c4195778908beb18b9?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "SolidWorks",
-        "Chapa / Mecánica"
       ]
     },
     {
