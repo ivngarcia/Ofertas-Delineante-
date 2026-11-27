@@ -1,7 +1,242 @@
 {
-  "ultima_actualizacion": "2026-11-25 17:53 UTC",
-  "total": 27,
+  "ultima_actualizacion": "2026-11-27 17:20 UTC",
+  "total": 31,
   "ofertas": [
+    {
+      "id": "a4b9789b6812",
+      "titulo": "Delineante (Ortuella)",
+      "empresa": "FVEM - Federación Vizcaína de Empresas del Metal",
+      "ubicacion": "Ortuella",
+      "salario": "No especificado",
+      "fuente": "Jooble",
+      "fecha": "2026-11-27",
+      "url": "https://es.jooble.org/jdp/8122571312506839286?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD"
+      ]
+    },
+    {
+      "id": "9f4e24b3aed9",
+      "titulo": "Delineante AutoCAD en Ingeniería Civil",
+      "empresa": "RDT",
+      "ubicacion": "País Vasco",
+      "salario": "No especificado",
+      "fuente": "SpainJobs.io",
+      "fecha": "2026-11-27",
+      "url": "https://www.spainjobs.io/es/empresas/rdt/delineante-autocad-en-ingenieria-civil-bizkaia--e81db07391?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Estructuras"
+      ]
+    },
+    {
+      "id": "a17f649929f8",
+      "titulo": "Delineante Civil 3D",
+      "empresa": "Iddtek",
+      "ubicacion": "Zamudio",
+      "salario": "No especificado",
+      "fuente": "Indeed",
+      "fecha": "2026-11-27",
+      "url": "https://es.indeed.com/viewjob?jk=5a67fdf5e7baeeac&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Revit / BIM",
+        "Estructuras"
+      ]
+    },
+    {
+      "id": "e5d8325b195b",
+      "titulo": "DELINEANTE/A INDUSTRIAL MUNGIA",
+      "empresa": "Adecco",
+      "ubicacion": "Mungia (y otra más)",
+      "salario": "No especificado",
+      "fuente": "Talent.com",
+      "fecha": "2026-11-27",
+      "url": "https://es.talent.com/view?id=642678684914550193&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Inventor",
+        "Calderería",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "7ab62785f112",
+      "titulo": "Delineante/a Revit y Autocad 3D",
+      "empresa": "Iddtek",
+      "ubicacion": "País Vasco",
+      "salario": "No especificado",
+      "fuente": "Jooble",
+      "fecha": "2026-11-27",
+      "url": "https://es.jooble.org/rjdp/2348358759929592879?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Revit / BIM",
+        "Estructuras"
+      ]
+    },
+    {
+      "id": "57c641a849ed",
+      "titulo": "Proyectista Mecánico",
+      "empresa": "Iddtek",
+      "ubicacion": "Basauri",
+      "salario": "No especificado",
+      "fuente": "Trabajo.org",
+      "fecha": "2026-11-27",
+      "url": "https://es.trabajo.org/oferta-5647-953e9e993a78f3bdd297a716155cba76?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Estructuras",
+        "Tubería",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "bdd364842c11",
+      "titulo": "Proyectista Mecánico (Plant 3D/Naviswork)",
+      "empresa": "RDT",
+      "ubicacion": "Zamudio",
+      "salario": "No especificado",
+      "fuente": "Empleo - RDT",
+      "fecha": "2026-11-27",
+      "url": "https://careers.rdt.com/jobs/6177056-proyectista-mecanico-plant-3d-naviswork?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Estructuras",
+        "Tubería",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "4d01a4a974f0",
+      "titulo": "Proyectista Mecánico 3D | Tubos, Soportes & Isométricos",
+      "empresa": "ADYD Group",
+      "ubicacion": "Bilbao",
+      "salario": "No especificado",
+      "fuente": "Jooble",
+      "fecha": "2026-11-27",
+      "url": "https://es.jooble.org/jdp/-5741044929514681708?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Tubería",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "a8e3b596aa86",
+      "titulo": "PROYECTISTA MECÁNICO",
+      "empresa": "ADYD Group",
+      "ubicacion": "Bilbao",
+      "salario": "No especificado",
+      "fuente": "Talent.com",
+      "fecha": "2026-11-27",
+      "url": "https://es.talent.com/view?id=605332565215814580&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Estructuras",
+        "Tubería",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "8868ef151fa5",
+      "titulo": "Proyectista Mecánico 3D De Plantas | Navisworks/Plant 3D",
+      "empresa": "Rdt",
+      "ubicacion": "Álava",
+      "salario": "No especificado",
+      "fuente": "Buscojobs",
+      "fecha": "2026-11-27",
+      "url": "https://www.buscojobs.com.es/proyectista-mecanico-3-d-de-plantas-navisworks-plant-3-d-en-alava-ID-382156940?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Tubería",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "aaede176658a",
+      "titulo": "Delineante Of 2ª  (H/M)",
+      "empresa": "ANANDA GESTION ETT",
+      "ubicacion": "Vizcaya",
+      "salario": "No especificado",
+      "fuente": "Infoempleo",
+      "fecha": "2026-11-27",
+      "url": "https://www.infoempleo.com/ofertasdetrabajo/delineante-of-2-hm/galdakaogaldacano/3086895/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD"
+      ]
+    },
+    {
+      "id": "155376c135f8",
+      "titulo": "Delineante/A De Ingeniería De Subestaciones (Protección Y Control)",
+      "empresa": "Ingeteam",
+      "ubicacion": "Bilbao (y otra más)",
+      "salario": "No especificado",
+      "fuente": "Talent.com",
+      "fecha": "2026-11-27",
+      "url": "https://es.talent.com/view?id=645206170754420776&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "EPLAN"
+      ]
+    },
+    {
+      "id": "0ab1b7522afe",
+      "titulo": "Delineante Proyectista de Obra Civil",
+      "empresa": "Jobleads",
+      "ubicacion": "País Vasco",
+      "salario": "No especificado",
+      "fuente": "Jooble",
+      "fecha": "2026-11-27",
+      "url": "https://es.jooble.org/rjdp/3109491481712092318?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": []
+    },
+    {
+      "id": "c5af54490db6",
+      "titulo": "Delineante/Diseñador Civil TEKLA",
+      "empresa": "RDT",
+      "ubicacion": "Gran Bilbao",
+      "salario": "No especificado",
+      "fuente": "Trabajo.org",
+      "fecha": "2026-11-27",
+      "url": "https://es.trabajo.org/oferta-5355-3ec1b76e7472ad52ff014e6d0f591fa2?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Tekla",
+        "Estructuras"
+      ]
+    },
+    {
+      "id": "8c4d92b8aa22",
+      "titulo": "Delineante Proyectista Mecánico Senior (Solidworks)",
+      "empresa": "Jobtome",
+      "ubicacion": "Altzaga",
+      "salario": "No especificado",
+      "fuente": "Euspert",
+      "fecha": "2026-11-27",
+      "url": "https://es.euspert.com/ofertas-de-trabajo/vizcaya/delineante-proyectista-mecanico-senior-solidworks-69085818.html?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "SolidWorks",
+        "Chapa / Mecánica"
+      ]
+    },
+    {
+      "id": "6d84d3d81f8e",
+      "titulo": "Proyectista mecánico de diseño de instalaciones",
+      "empresa": "Jobleads",
+      "ubicacion": "Bilbao",
+      "salario": "No especificado",
+      "fuente": "Jooble",
+      "fecha": "2026-11-27",
+      "url": "https://es.jooble.org/rjdp/-1676326032386625189?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
+      "etiquetas": [
+        "AutoCAD",
+        "Estructuras",
+        "Tubería",
+        "Chapa / Mecánica"
+      ]
+    },
     {
       "id": "5e209c554b8e",
       "titulo": "Técnico/a de Producción y Delineante CAD",
@@ -18,64 +253,6 @@
       ]
     },
     {
-      "id": "a4b9789b6812",
-      "titulo": "Delineante (Ortuella)",
-      "empresa": "FVEM - Federación Vizcaína de Empresas del Metal",
-      "ubicacion": "Ortuella",
-      "salario": "No especificado",
-      "fuente": "Jooble",
-      "fecha": "2026-11-25",
-      "url": "https://es.jooble.org/jdp/8122571312506839286?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD"
-      ]
-    },
-    {
-      "id": "9f4e24b3aed9",
-      "titulo": "Delineante AutoCAD en Ingeniería Civil",
-      "empresa": "RDT",
-      "ubicacion": "País Vasco",
-      "salario": "No especificado",
-      "fuente": "SpainJobs.io",
-      "fecha": "2026-11-25",
-      "url": "https://www.spainjobs.io/es/empresas/rdt/delineante-autocad-en-ingenieria-civil-bizkaia--e81db07391?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Estructuras"
-      ]
-    },
-    {
-      "id": "a17f649929f8",
-      "titulo": "Delineante Civil 3D",
-      "empresa": "Iddtek",
-      "ubicacion": "Zamudio",
-      "salario": "No especificado",
-      "fuente": "Indeed",
-      "fecha": "2026-11-25",
-      "url": "https://es.indeed.com/viewjob?jk=5a67fdf5e7baeeac&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Revit / BIM",
-        "Estructuras"
-      ]
-    },
-    {
-      "id": "e5d8325b195b",
-      "titulo": "DELINEANTE/A INDUSTRIAL MUNGIA",
-      "empresa": "Adecco",
-      "ubicacion": "Mungia (y otra más)",
-      "salario": "No especificado",
-      "fuente": "Talent.com",
-      "fecha": "2026-11-25",
-      "url": "https://es.talent.com/view?id=642678684914550193&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Inventor",
-        "Calderería",
-        "Chapa / Mecánica"
-      ]
-    },
-    {
       "id": "ad5b13bb8791",
       "titulo": "Delineante Eléctrico (nivel alto AutoCAD)",
       "empresa": "Applus",
@@ -87,81 +264,6 @@
       "etiquetas": [
         "AutoCAD",
         "Estructuras"
-      ]
-    },
-    {
-      "id": "7ab62785f112",
-      "titulo": "Delineante/a Revit y Autocad 3D",
-      "empresa": "Iddtek",
-      "ubicacion": "País Vasco",
-      "salario": "No especificado",
-      "fuente": "Jooble",
-      "fecha": "2026-11-25",
-      "url": "https://es.jooble.org/rjdp/2348358759929592879?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Revit / BIM",
-        "Estructuras"
-      ]
-    },
-    {
-      "id": "57c641a849ed",
-      "titulo": "Proyectista mecánico",
-      "empresa": "Iddtek",
-      "ubicacion": "Zamudio",
-      "salario": "No especificado",
-      "fuente": "Indeed",
-      "fecha": "2026-11-25",
-      "url": "https://es.indeed.com/viewjob?jk=24641d847e0d3e47&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "Chapa / Mecánica"
-      ]
-    },
-    {
-      "id": "bdd364842c11",
-      "titulo": "Proyectista Mecánico (Plant 3D/Naviswork)",
-      "empresa": "RDT",
-      "ubicacion": "País Vasco",
-      "salario": "No especificado",
-      "fuente": "Talent.com",
-      "fecha": "2026-11-25",
-      "url": "https://es.talent.com/view?id=618872040724574111&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Estructuras",
-        "Tubería",
-        "Chapa / Mecánica"
-      ]
-    },
-    {
-      "id": "4d01a4a974f0",
-      "titulo": "Proyectista Mecánico 3D | Tubos, Soportes & Isométricos",
-      "empresa": "ADYD Group",
-      "ubicacion": "Bilbao",
-      "salario": "No especificado",
-      "fuente": "Jooble",
-      "fecha": "2026-11-25",
-      "url": "https://es.jooble.org/jdp/-5741044929514681708?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Tubería",
-        "Chapa / Mecánica"
-      ]
-    },
-    {
-      "id": "a8e3b596aa86",
-      "titulo": "PROYECTISTA MECÁNICO",
-      "empresa": "ADYD Group",
-      "ubicacion": "Bilbao",
-      "salario": "No especificado",
-      "fuente": "Talent.com",
-      "fecha": "2026-11-25",
-      "url": "https://es.talent.com/view?id=605332565215814580&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Estructuras",
-        "Tubería",
-        "Chapa / Mecánica"
       ]
     },
     {
@@ -192,21 +294,6 @@
         "SolidWorks",
         "Tekla",
         "Estructuras"
-      ]
-    },
-    {
-      "id": "8868ef151fa5",
-      "titulo": "Proyectista Mecánico 3D De Plantas | Navisworks/Plant 3D",
-      "empresa": "Rdt",
-      "ubicacion": "Álava",
-      "salario": "No especificado",
-      "fuente": "Trabajo.org",
-      "fecha": "2026-11-25",
-      "url": "https://es.trabajo.org/oferta-5136-326971f9df4546448c2eab3b879d9bab?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "Tubería",
-        "Chapa / Mecánica"
       ]
     },
     {
@@ -264,33 +351,6 @@
         "AutoCAD",
         "Revit / BIM",
         "Chapa / Mecánica"
-      ]
-    },
-    {
-      "id": "aaede176658a",
-      "titulo": "Delineante Of 2ª  (H/M)",
-      "empresa": "ANANDA GESTION ETT",
-      "ubicacion": "Vizcaya",
-      "salario": "No especificado",
-      "fuente": "Infoempleo",
-      "fecha": "2026-11-23",
-      "url": "https://www.infoempleo.com/ofertasdetrabajo/delineante-of-2-hm/galdakaogaldacano/3086895/?utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD"
-      ]
-    },
-    {
-      "id": "155376c135f8",
-      "titulo": "Delineante/A De Ingeniería De Subestaciones (Protección Y Control)",
-      "empresa": "Ingeteam",
-      "ubicacion": "Bilbao (y otra más)",
-      "salario": "No especificado",
-      "fuente": "Talent.com",
-      "fecha": "2026-11-23",
-      "url": "https://es.talent.com/view?id=645206170754420776&utm_campaign=google_jobs_apply&utm_source=google_jobs_apply&utm_medium=organic",
-      "etiquetas": [
-        "AutoCAD",
-        "EPLAN"
       ]
     },
     {
